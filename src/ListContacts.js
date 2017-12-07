@@ -50,11 +50,7 @@ class ListContacts extends React.Component {
               this.updateQuery(event.target.value);
             }}
           />
-          <Link
-            to="/create"
-            onClick={this.props.onNavigateChange}
-            className="add-contact"
-          >
+          <Link to="/create" className="add-contact">
             Add Contact
           </Link>
         </div>
