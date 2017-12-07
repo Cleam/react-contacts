@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import EscapeRegexp from "escape-string-regexp";
 import SortBy from "sort-by";
 
-class ListContacts extends Component {
+class ListContacts extends React.Component {
   static propTypes = {
     contacts: PropTypes.array.isRequired,
     onDeleteContact: PropTypes.func.isRequired
@@ -49,9 +50,13 @@ class ListContacts extends Component {
               this.updateQuery(event.target.value);
             }}
           />
-          <a href="#create" onClick={this.props.onNavigateChange} className="add-contact">
+          <Link
+            to="/create"
+            onClick={this.props.onNavigateChange}
+            className="add-contact"
+          >
             Add Contact
-          </a>
+          </Link>
         </div>
         {showingContacts.length !== contacts.length && (
           <div className="showing-contacts">
